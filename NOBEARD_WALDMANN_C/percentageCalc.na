@@ -1,0 +1,64 @@
+"Enter max score:Enter your score:You reached%"
+inc 16
+
+
+#print "enter max"
+lit 0
+lit 16
+lit 17
+out 2
+
+#read max
+la 0 32
+la 0 44
+in 0
+out 3
+
+#print "enter your"
+lit 16
+lit 17
+lit 18
+out 2
+
+#read your
+la 0 36
+la 0 44
+in 0 
+out 3
+
+#calc 
+la 0 36
+lv 0 36
+lit 100
+mul
+sto
+
+#calc
+la 0 40
+lv 0 36
+lv 0 32
+div
+sto
+
+
+#out
+
+#print "you reached"
+lit 33
+lit 11
+lit 12
+out 2
+
+#print percent
+lv 0 40
+lit 4
+out 0 
+
+#print percent sign and space
+lit 44
+lit 1
+lit 2
+out 2
+out 3
+
+halt
