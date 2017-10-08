@@ -1,0 +1,59 @@
+"Enter nr:"
+
+inc 8
+
+
+#print
+lit 0
+lit 9
+lit 10
+out 2
+
+#readin and inc 1
+la 0 32
+la 0 36
+in 0
+la 0 32
+lv 0 32
+lit 1
+add
+sto
+
+#make cnt var
+la 0 36
+lit 1
+sto
+jmp .loop
+
+#count to var36
+.loop
+jmp .print
+.donePrint
+lv 0 32
+lv 0 36
+rel 2
+fjmp .loop
+jmp .end
+
+
+
+
+
+#print curr num and increment 1
+.print
+lv 0 36
+lit 5
+out 0
+out 3
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+jmp .donePrint
+
+
+#endOfProgram
+.end
+out 3
+halt

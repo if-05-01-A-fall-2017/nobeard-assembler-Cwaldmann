@@ -1,0 +1,79 @@
+"Please enter number to be prim-factorized:PrimeFactors:"
+
+inc 20
+
+
+#print Please enter number to be prim-factorized:
+lit 0
+lit 42
+lit 43
+out 2
+out 3
+
+#readin       VAR N TO 32
+la 0 32
+la 0 36
+in 0
+out 3
+
+
+#print 
+lit 42
+lit 13
+lit 14
+out 2 
+out 3
+
+# 				VAR i is 2 @36
+la 0 36
+lit 2
+sto
+
+
+
+.loop	# START OF FOR i <= n; i++
+
+
+#checking i <= n
+lv 0 36
+lv 0 32
+rel 1
+fjmp .end
+
+.while	#while (n%i == 0)  START OF WHILE
+lv 0 32
+lv 0 36
+mod
+lit 0
+rel 2   	# wann n%1 == 0 is dann gehts weida und i is a FACTOR
+fjmp .bottomfor
+lv 0 36
+lit 2
+out 0
+out 3
+# n /= i
+la 0 32
+lv 0 32
+lv 0 36
+div 
+sto
+jmp .while	#endofWHILE
+
+
+
+
+
+
+#	BOTTOM OF FOR ( AFTER WHILE ) increment i
+.bottomfor
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+jmp .loop
+
+
+.end
+out 3
+halt
